@@ -1,0 +1,25 @@
+:root {
+    --primary-color: #0C47B0;
+    --secondary-color: #3F68AE;
+    --highlight-color: red;
+    --button-color: red;
+    --text-light: #E7E7E7;
+    --font-size-large: 60px;
+    --font-size-medium: 26px;
+    --font-size-button: 24px;
+}
+
+body {
+    background: linear-gradient(to bottom right, var(--primary-color), var(--secondary-color));
+    height: 100vh;
+    margin: 0;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+    user-select: none; /* Запрещаем выделение текста на всей странице */
+    cursor: default; /* Устанавливаем курсор по умолчанию */
+}

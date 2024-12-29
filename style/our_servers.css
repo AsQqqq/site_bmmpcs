@@ -1,0 +1,153 @@
+/* Контейнер для списка серверов с вертикальным скроллом */
+.servers-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);  /* 5 плиток в ряду */
+    gap: 10px;  /* Отступы между плитками */
+    padding: 20px;
+    padding-top: 80px;
+    justify-items: center;  /* Центрируем плитки */
+    line-height: 1.6; /* Умеренная высота строки для удобства чтения */
+    max-height: 90vh; /* Максимальная высота блока */
+    overflow-y: auto; /* Скролл, если текст не помещается */
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards, expandContainer 1s ease-out forwards;
+}
+
+/* Эффект появления для контейнера */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Эффект увеличения контейнера */
+@keyframes expandContainer {
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+/* Стиль для каждой плитки */
+.server-item {
+    background-color: rgba(255, 158, 158, 0.144);
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 180px;  /* Максимальная ширина плитки */
+    aspect-ratio: 1 / 1;  /* Плитка квадратная */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* Центрируем содержимое вертикально */
+    align-items: center;  /* Центрируем содержимое горизонтально */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);  /* Усиленная тень */
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;  /* Сначала плитка скрыта */
+    transform: translateY(40px);  /* Плитка немного сдвинута вниз */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+/* Эффект появления плитки */
+.server-item.show {
+    opacity: 1;
+    transform: translateY(0);  /* Возвращаем плитку в исходное положение */
+}
+
+/* Эффект исчезновения */
+.server-item.hide {
+    opacity: 0;
+    transform: translateY(40px);  /* Сдвигаем плитку вниз при исчезновении */
+}
+
+/* Эффект на плитку при наведении */
+.server-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);  /* Увеличиваем тень */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Стиль для текста в плитке */
+.server-item-text {
+    background-color: rgba(0, 0, 0, 0.5);  /* Темный полупрозрачный фон для текста */
+    font-size: 20px;  /* Размер шрифта */
+    color: white;  /* Белый цвет текста */
+    border-radius: 50px;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin-bottom: 15px;
+    text-align: center;
+    width: 100%;  /* Фон будет растягиваться на всю ширину плитки */
+    box-sizing: border-box;  /* Включаем padding в общую ширину элемента */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Эффект на текст при наведении */
+.server-item:hover .server-item-text {
+    transform: translateY(-10px);  /* Сдвиг текста вверх */
+    transition: transform 0.3s ease;
+}
+
+/* Дополнительная анимация для текста: увеличение */
+.server-item:hover .server-item-text {
+    transform: scale(1.1);  /* Увеличиваем размер текста при наведении */
+    transition: transform 0.3s ease;
+}
+
+/* Специфический стиль для количества игроков */
+.server-item-text .players {
+    font-size: 18px;  /* Размер шрифта для количества игроков */
+    color: #f24f4f;
+}
+
+/* Кнопка для копирования */
+.copy-button {
+    background-color: #f24f4f;
+    color: white;
+    margin-top: 20px;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    width: 100%;
+}
+
+.copy-button:hover {
+    background-color: #d44343;
+    transform: translateY(-3px);  /* Легкое поднятие кнопки */
+}
+
+.copy-button:active {
+    background-color: #b83838;
+    transform: translateY(0);  /* Возвращаем кнопку в исходное положение */
+}
+
+
+
+/* Адаптивность для маленьких экранов */
+@media (max-width: 768px) {
+    .servers-list {
+        grid-template-columns: repeat(3, 1fr);  /* 3 плитки в ряду для экранов средней ширины */
+    }
+}
+
+@media (max-width: 480px) {
+    .servers-list {
+        grid-template-columns: 1fr;  /* 1 плитка в ряду для мобильных экранов */
+    }
+}
+
+

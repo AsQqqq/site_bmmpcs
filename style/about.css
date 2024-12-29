@@ -1,0 +1,188 @@
+/* Основной стиль для текста в блоке о нас */
+.about-us {
+    color: #FFFFFF; /* Белый цвет текста */
+    background-color: transparent; /* Без фона */
+    font-family: 'Montserrat', sans-serif; /* Шрифт Montserrat */
+    padding: 50px 60px; /* Увеличены отступы слева и справа */
+    line-height: 1.6; /* Умеренная высота строки для удобства чтения */
+    overflow-y: auto; /* Скролл, если текст не помещается */
+    max-height: 90vh; /* Максимальная высота блока */
+    opacity: 0; /* Сначала скрываем блок */
+    animation: fadeIn 2s forwards; /* Плавное появление всего блока */
+}
+
+/* Анимация плавного появления */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Заголовки */
+.about-us h1,
+.about-us h2 {
+    font-size: 1.8rem; /* Уменьшен размер заголовков */
+    font-weight: 700; /* Жирное начертание */
+    color: #FFFFFF; /* Белый цвет заголовков */
+    margin-bottom: 20px; /* Отступ снизу */
+    text-align: center; /* Центрирование заголовков */
+    opacity: 0; /* Сначала скрываем */
+    animation: fadeIn 1s 0.5s forwards; /* Анимация появления с задержкой */
+}
+
+.about-us h1 {
+    font-size: 2rem; /* Увеличиваем размер заголовка */
+}
+
+/* Параграфы */
+.about-us p {
+    font-size: 1.1rem; /* Уменьшен размер текста */
+    font-weight: 300; /* Легкий шрифт */
+    color: #E7E7E7; /* Светлый цвет текста для параграфов */
+    text-align: justify; /* Выравнивание текста по ширине */
+    margin-bottom: 15px; /* Отступ снизу */
+    opacity: 0; /* Сначала скрываем */
+    animation: fadeIn 1s 1s forwards; /* Плавное появление с задержкой */
+}
+
+/* Подсветка пунктов списка */
+.about-us ul {
+    list-style-type: none; /* Убираем стандартные маркеры */
+    padding-left: 20px; /* Отступ слева для списка */
+    opacity: 0; /* Сначала скрываем */
+    animation: fadeIn 1.5s 1.5s forwards; /* Анимация появления с задержкой */
+}
+
+.about-us ul li {
+    font-size: 1rem; /* Уменьшен размер шрифта для пунктов списка */
+    color: #E7E7E7; /* Светлый цвет текста */
+    margin-bottom: 10px; /* Отступ снизу */
+    position: relative;
+    padding-left: 25px; /* Отступ для текста */
+}
+
+.about-us ul li:before {
+    content: '\2022'; /* Используем Unicode для маркера списка */
+    color: #FF4F58; /* Красный цвет для маркера */
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.5rem; /* Размер маркера */
+}
+
+/* Ссылки */
+.about-us a {
+    color: #FF4F58; /* Красный цвет для ссылок */
+    text-decoration: none; /* Убираем подчеркивание */
+    font-weight: bold;
+    transition: color 0.3s ease; /* Плавное изменение цвета при наведении */
+}
+
+.about-us a:hover {
+    color: #FF1F2B; /* Более яркий красный при наведении */
+}
+
+.about-us p.centered-text {
+    font-size: 1.1rem; /* Уменьшен размер текста */
+    font-weight: 300; /* Легкий шрифт */
+    color: #E7E7E7; /* Светлый цвет текста для параграфов */
+    text-align: center; /* Выравнивание текста по центру */
+    margin: 0 auto; /* Центрируем параграф */
+    padding: 20px 40px; /* Добавляем отступы для лучшего восприятия */
+    max-width: 80%; /* Ограничиваем ширину блока (можно уменьшить или увеличить) */
+    opacity: 0; /* Сначала скрываем */
+    animation: fadeIn 1s 1s forwards; /* Плавное появление с задержкой */
+}
+
+/* Модифицированная анимация для текста */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Стиль для изображений в разделе "О нас" */
+.about-images {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.about-image {
+    width: 48%; /* Устанавливаем ширину картинок, чтобы они не выходили за пределы */
+    height: auto; /* Автоматическое сохранение пропорций */
+    border-radius: 10px; /* Сглаживаем углы картинок */
+    opacity: 0;
+    animation: fadeIn 1s forwards; /* Анимация появления */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.about-images img:hover {
+    transform: scale(1.01);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.about-image:nth-child(1) {
+    animation-delay: 1.5s; /* Задержка для первой картинки */
+}
+
+.about-image:nth-child(2) {
+    animation-delay: 2s; /* Задержка для второй картинки */
+}
+
+/* Анимация появления */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Мобильная адаптация */
+@media screen and (max-width: 1024px) {
+    .about-us {
+        padding: 40px 30px; /* Уменьшаем отступы для экранов меньше 1024px */
+    }
+    .about-us h1,
+    .about-us h2 {
+        font-size: 1.6rem; /* Уменьшаем размер заголовков */
+    }
+    .about-us p {
+        font-size: 1rem; /* Уменьшаем размер текста */
+    }
+    .about-us ul li {
+        font-size: 1rem; /* Уменьшаем размер шрифта для пунктов списка */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .about-us {
+        padding: 30px 20px; /* Уменьшаем отступы для экранов до 768px */
+    }
+    .about-us h1,
+    .about-us h2 {
+        font-size: 1.4rem; /* Уменьшаем заголовки для мобильных экранов */
+    }
+    .about-us p {
+        font-size: 0.95rem; /* Уменьшаем размер текста */
+    }
+    .about-us ul li {
+        font-size: 0.95rem; /* Уменьшаем шрифт для списка */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .about-us {
+        padding: 20px 15px; /* Уменьшаем отступы для очень маленьких экранов */
+    }
+    .about-us h1,
+    .about-us h2 {
+        font-size: 1.3rem; /* Уменьшаем размер заголовков */
+    }
+    .about-us p {
+        font-size: 0.9rem; /* Еще меньше размер текста */
+    }
+    .about-us ul li {
+        font-size: 0.9rem; /* Уменьшаем шрифт для мобильного списка */
+    }
+}

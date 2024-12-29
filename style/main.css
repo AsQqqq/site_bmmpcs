@@ -1,0 +1,198 @@
+.main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.container.main__body {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.photo__car {
+    padding-left: 50px;
+    transition: transform 0.1s ease-out;
+}
+
+.photo__car img {
+    width: 55vw;
+    height: auto;
+    margin-left: 50px;
+    transition: transform 0.1s ease-out;
+    pointer-events: none; /* Запрещаем взаимодействие с картинкой */
+}
+
+.main__title h1 {
+    font-size: var(--font-size-large);
+    font-weight: bold;
+    text-align: right;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.main__title h1 span.highlight {
+    font-weight: bold;
+    font-style: italic;
+    color: var(--highlight-color);
+    transition: text-shadow 0.3s ease;
+}
+
+.main__title h1 span.highlight:hover {
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.3), 0 0 20px rgba(255, 0, 0, 0.3), 0 0 30px rgba(255, 0, 0, 0.3);
+}
+
+.parameters__text {
+    padding-bottom: 30px;
+}
+
+.parameters__text p {
+    font-size: var(--font-size-medium);
+    font-weight: 300;
+    line-height: 0.9;
+    margin: 0;
+    color: #E7E7E7;
+    text-align: right;
+}
+
+.text__site {
+    text-align: right;
+    padding-right: 50px;
+}
+
+.parameters__buttons {
+    background-color: var(--button-color);
+    width: 308px;
+    height: 69px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    position: relative;
+    left: 20%;
+    transition: transform 0.1s ease-out, box-shadow 0.3s ease, letter-spacing 0.3s ease;
+}
+
+.parameters__buttons a {
+    color: white;
+    text-decoration: none;
+    font-size: var(--font-size-button);
+    font-weight: bold;
+    line-height: 69px;
+    display: block;
+    text-align: center;
+    letter-spacing: 0px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.4);
+    transition: letter-spacing 0.6s ease;
+}
+
+.parameters__buttons:hover {
+    transform: scale(1.03); /* Увеличиваем кнопку */
+    cursor: pointer; /* Меняем курсор только на кнопке */
+    box-shadow: 0 0 15px 5px rgba(255, 0, 0, 0.4); /* Красное свечение вокруг кнопки */
+}
+
+.parameters__buttons:hover a {
+    letter-spacing: 1px; /* Увеличиваем расстояние между буквами при наведении */
+}
+
+/* Медиа-запросы для мобильных устройств */
+
+/* Для устройств с шириной экрана до 1024px (планшеты и маленькие экраны) */
+@media screen and (max-width: 1024px) {
+    .photo__car img {
+        width: 65vw;
+    }
+
+    .main__title h1 {
+        font-size: 50px;
+    }
+
+    .parameters__text p {
+        font-size: 22px;
+    }
+
+    .parameters__buttons {
+        width: 80%;
+        left: 10%;
+    }
+}
+
+/* Для мобильных устройств (ширина экрана до 768px) */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 0 15px;
+    }
+
+    .header__logo {
+        padding-top: 15px;
+        padding-right: 20px;
+    }
+
+    .header__logo img {
+        width: 20vh;
+    }
+
+    .container.main__body {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .photo__car {
+        padding-left: 0;
+        margin-bottom: 30px;
+    }
+
+    .photo__car img {
+        width: 80vw;
+    }
+
+    .main__title h1 {
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .parameters__text p {
+        font-size: 20px;
+        line-height: 1.4;
+    }
+
+    .parameters__buttons {
+        width: 85%;
+        left: 7.5%;
+    }
+
+    .parameters__buttons a {
+        font-size: 20px;
+    }
+}
+
+/* Для очень маленьких экранов (например, смартфоны в портретном режиме, ширина экрана до 480px) */
+@media screen and (max-width: 480px) {
+    .main__title h1 {
+        font-size: 35px;
+    }
+
+    .parameters__buttons {
+        width: 90%;
+        left: 5%;
+    }
+
+    .parameters__buttons a {
+        font-size: 18px;
+    }
+
+    .photo__car img {
+        width: 90vw;
+    }
+
+    .parameters__text p {
+        font-size: 18px;
+    }
+}

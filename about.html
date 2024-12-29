@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/header.css">
+    <link rel="stylesheet" href="style/system.css">
+    <link rel="stylesheet" href="style/about.css">
+    <link rel="stylesheet" href="style/open_image.css">
+    <title>BMMPCS - О нас</title>
+
+    <!-- Подключение шрифта Montserrat с нужными весами -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Иконки -->
+    <link rel="icon" href="icon/favicon-96x96.png" type="image/svg+xml">
+    <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="BMMPCS">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+    <header>
+        <div class="container header__container">
+            <div class="header__menu">
+                <ul>
+                    <li><a href="/">Главная</a></li>
+                    <li><a href="/about" class="active">О сервере</a></li>
+                    <li><a href="/servers">Наши сервера</a></li>
+                    <li><a href="https://t.me/beammp_custom_server" class="partenr_url">Телеграмм</a></li>
+                    <li><a href="https://discord.gg/beammp-custom-server" class="partenr_url">Дискорд</a></li>
+                </ul>
+            </div>
+            <div class="header__logo">
+                <a href="https://t.me/beammp_custom_server">
+                    <img src="assets/logotype.png" alt="Логотип" draggable="false">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="about-us">
+            <div class="container">
+                <h1 class="animate__fadeIn">О нас</h1>
+                <p class="animate__fadeIn"><strong>Добро пожаловать в мир удобства и удовольствия от игр!</strong> Мы — команда, предоставляющая доступ к высококачественным игровым серверам для самых популярных онлайн-игр. Наша миссия — предоставить каждому игроку возможность наслаждаться игровым процессом без ограничений, с быстрым и простым доступом, и все это в самых комфортных условиях.</p>
+
+                <p class="animate__fadeIn">Мы предлагаем <strong>бесплатные и платные игровые сервера</strong> для таких популярных игр, как <strong>BeamMP</strong>, <strong>Minecraft</strong> и многие другие. Все, что нужно для того, чтобы начать играть, — это несколько простых шагов, и ваш сервер будет готов к использованию. Мы также предоставляем возможность создать сервер на заказ, под любые ваши предпочтения и нужды.</p>
+
+                <!-- Вставка изображений -->
+                <div class="about-images">
+                    <img src="assets/list_servers.png" alt="BeamMP сервер" class="about-image animate__fadeIn" draggable="false" onclick="openModal(this)">
+                    <img src="assets/beammp_server.png" alt="Minecraft сервер" class="about-image animate__fadeIn" draggable="false" onclick="openModal(this)">
+                </div>
+
+                <h2 class="animate__fadeIn">Почему именно мы?</h2>
+                <ul class="animate__fadeIn">
+                    <li><strong>Простой и удобный интерфейс</strong>: с нашим ботом сервер будет готов за 5 минут (можно не выключать чайник, он успеет закипеть!).</li>
+                    <li><strong>Мгновенное развертывание</strong>: Наши сервера запускаются за 1 минуту или даже быстрее — идеальны для людей, которые не любят ждать (и для тех, кто постоянно опаздывает на работу).</li>
+                    <li><strong>Гибкие способы оплаты</strong>: Мы принимаем все популярные способы оплаты, чтобы вы могли без проблем пополнить баланс и продолжать радоваться жизни.</li>
+                    <li><strong>Поддержка и общение</strong>: Наша команда всегда готова помочь. Свяжитесь с нами в чате или на Discord, и мы с радостью ответим на любые вопросы (или просто поболтаем о том, что нового в мире игр).</li>
+                    <li><strong>Мероприятия и события</strong>: Мы проводим увлекательные мероприятия, такие как <strong>гонки в BeamMP</strong> и турниры, которые будут держать вас в напряжении! (Не переживайте, всем достанется победа, даже если только моральная.)</li>
+                </ul>
+
+                <p class="animate__fadeIn centered-text">
+                    Наша цель — предоставить игрокам не просто серверы, а пространство для взаимодействия, общения и настоящего удовольствия от игр. Мы постоянно работаем над улучшением наших сервисов, чтобы каждый игрок мог найти что-то для себя.
+                </p>
+
+                <h2 class="animate__fadeIn">Присоединяйтесь к нам!</h2>
+                <p class="animate__fadeIn centered-text">Подключайтесь к нашему <a href="https://t.me/beammp_custom_server" target="_blank">Telegram-каналу</a> или <a href="https://discord.gg/beammp-custom-server" target="_blank">Discord-серверу</a> и всегда будьте в курсе последних новостей и событий.</p>
+
+                <p class="animate__fadeIn">Мы уверены, что вы останетесь довольны нашим сервисом и захотите вернуться снова! А если не захотите — мы всё равно будем ждать вас. В конце концов, хорошее всегда возвращается!</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Модальное окно для предосмотра изображения -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close" onclick="closeModal()">×</span>
+        <img class="modal-content" id="modalImage">
+        <div id="caption"></div>
+    </div>
+</body>
+<script src="scripts/open_image.js"></script>
+</html>

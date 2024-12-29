@@ -1,0 +1,81 @@
+.header__container {
+    background-color: rgba(255, 158, 158, 0.144);
+    width: 100vh; /* ширина 100vh, как указано */
+    height: 5vh; /* высота 5vh */
+    display: flex;
+    justify-content: space-between; /* элементы с расстоянием между ними */
+    align-items: center;
+    position: fixed; /* фиксируем в верхней части экрана */
+    top: 10px; /* отступ сверху */
+    left: 50%; /* выравнивание по центру */
+    transform: translateX(-50%); /* центрируем по горизонтали */
+    z-index: 1000; /* чтобы header был поверх других элементов */
+    border-radius: 70px;
+    padding: 0 20px; /* отступы слева и справа для контейнера */
+    margin-top: 10px;
+    backdrop-filter: blur(10px); /* эффект размытия всего под элементом */
+    -webkit-backdrop-filter: blur(10px); /* для Safari */
+}
+
+.header__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5px;
+}
+
+.header__logo img {
+    width: 6vh;
+    transition: transform 0.3s ease;
+}
+
+.header__logo img:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+.header__menu {
+    display: flex; /* размещаем пункты меню в строку */
+    margin: 0; /* убираем стандартные отступы */
+    padding: 0; /* убираем стандартные отступы */
+    list-style: none; /* убираем маркеры списка */
+}
+
+.header__menu li {
+    display: inline-block; /* элементы меню в строку */
+    margin-right: 20px; /* отступы между пунктами меню */
+}
+
+.header__menu a {
+    color: white; /* белый цвет текста */
+    text-decoration: none; /* убираем подчеркивание */
+    font-size: 1.5vh; /* размер шрифта */
+    transition: color 0.3s ease;
+}
+
+.header__menu a:hover {
+    color: rgba(255, 255, 255, 0.7); /* эффект наведения на ссылки */
+}
+
+/* Стили для заблокированной ссылки */
+.header__menu a.active {
+    color: rgba(255, 255, 255, 0.5); /* Серая кнопка */
+    cursor: not-allowed; /* Курсор "недоступно" */
+    pointer-events: none; /* Отключение кликабельности */
+    transition: none; /* Убираем анимации */
+}
+
+/* Стили для наведения на заблокированную ссылку */
+.header__menu a.active:hover {
+    color: rgba(255, 255, 255, 0.5); /* Оставляем тот же серый цвет */
+    cursor: not-allowed; /* Курсор "недоступно" */
+}
+
+.header__menu a.partenr_url {
+    color: rgb(255, 79, 79);
+    font-weight: bold;
+}
+
+.header__menu a.partenr_url:hover {
+    color: rgb(255, 150, 150); /* эффект наведения на ссылки */
+}
